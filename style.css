@@ -1,0 +1,315 @@
+/* ===== إعدادات عامة ===== */
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    color: #333;
+    direction: rtl;
+    background: none;
+  }
+  
+  /* ===== البار العلوي ===== */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, #5fa8d3, #9dd9d2);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-left .main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  
+  .nav-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-right a.active {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #1b3b5a;
+    font-weight: bold;
+  }
+  
+  /* ==================== الصفحة الأولى: الإنسان والفن ==================== */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* الصورة مع Blur */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("1.jpg"); /* ضع اسم صورتك */
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px); /* الـ Blur */
+    z-index: 0;
+  }
+  
+  /* بوكس الكلام الأبيض فوق الخلفية */
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    width: 80%;
+    height: 90vh; /* يكفي كل الكلام */
+    overflow-y: auto; /* Scroll للنص الطويل */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    text-align: justify;
+    z-index: 1; /* فوق الصورة */
+  }
+  
+  .hero-content h2 {
+    color: #3a7ca5;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .hero-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Scrollbar أنيق داخل البوكس */
+  .hero-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .hero-content::-webkit-scrollbar-track {
+    background: rgba(200, 230, 240, 0.3);
+    border-radius: 5px;
+  }
+  
+  .hero-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #61a5c2, #3a7ca5);
+    border-radius: 5px;
+  }
+  
+  .hero-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #468faf, #1b3b5a);
+  }
+  
+  /* ===== Responsive للموبايل ===== */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+  
+    .nav-left, .nav-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px 0;
+    }
+  
+    .nav-right a {
+      margin: 5px 0;
+    }
+  
+    .hero-content {
+      width: 90%;
+      padding: 25px 20px;
+      height: 85vh;
+    }
+  
+    .hero-content h2 {
+      font-size: 28px;
+    }
+  
+    .hero-content p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+  
+  
+  .hero-content::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .hero-content::-webkit-scrollbar-track {
+    background: rgba(200, 230, 240, 0.3);
+    border-radius: 5px;
+  }
+  
+  .hero-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #61a5c2, #3a7ca5);
+    border-radius: 5px;
+  }
+  
+  .hero-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #468faf, #1b3b5a);
+  }
+  
+  /* ==================== باقي الصفحات: Gradient أزرق ==================== */
+  .gradient-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #e8f4fa, #cfe9f3, #b5ddea);
+    padding-top: 100px;
+  }
+  
+  /* ===== صندوق اللوحات ===== */
+  .art-box {
+    display: flex;
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    width: 80%;
+    transition: transform 0.3s ease;
+  }
+  
+  .art-box:hover {
+    transform: scale(1.03);
+  }
+  
+  .art-box img {
+    width: 220px;
+    height: auto;
+    border-radius: 12px;
+    margin-left: 20px;
+  }
+  
+  .art-text h3 {
+    color: #468faf;
+    margin-top: 0;
+  }
+  
+  .art-text p {
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  
+  .art-text span {
+    display: block;
+    margin-top: 10px;
+    color: #6b9080;
+    font-weight: bold;
+  }
+  
+  /* ==================== صفحة النقاش ==================== */
+  textarea {
+    width: 80%;
+    height: 120px;
+    border-radius: 12px;
+    border: 1px solid #a9d6e5;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  textarea:focus {
+    border-color: #61a5c2;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #61a5c2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #468faf;
+  }
+  
+  #commentsSection p {
+    background-color: #d9f0f7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ==================== Responsive للموبايل ==================== */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+  
+    .nav-left, .nav-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px 0;
+    }
+  
+    .nav-right a {
+      margin: 5px 0;
+    }
+  
+    .hero-content {
+      width: 90%;
+      padding: 25px 20px;
+      height: 85vh;
+    }
+  
+    .hero-content h2 {
+      font-size: 28px;
+    }
+  
+    .hero-content h3 {
+      font-size: 18px;
+    }
+  
+    .hero-content p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  
+    .art-box {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .art-box img {
+      margin: 0 0 15px 0;
+    }
+  
+    textarea, #commentsSection p {
+      width: 90%;
+    }
+  }
+  
